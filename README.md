@@ -7,3 +7,5 @@ PROJECT: Javascript/Jquery
 Coded by: Brenden Belluardo
 
 http://www.theodinproject.com/web-development-101/javascript-and-jquery?ref=lc-pb
+
+PREVIEW: https://htmlpreview.github.io/?https://github.com/brenbell/etch-a-sketch/blob/master/index.html
