@@ -1,40 +1,41 @@
 
 /* store value of container width/height */
-var containerWidth = 200;
-var containerHeight = 200;
-var defaultBoxes = 16;
+var containerWidth = 300;
+var containerHeight = 300;
+var defaultGrid = 16;
 
-$(document).ready(function(){
-	createBoxes(defaultBoxes);
-	$(".box").mouseenter(function(){
-		$(this).css("background-color","blue");
-	});
+$(document).ready(function () {
+    $('button').on("click", function () {
+        var num = parseInt(prompt("What size would you like your grid? Must be a number between 1 and 10"));
+        createGrid(num);
+        $('.grid').hover(function () {
+            $(this).css("opacity", 0);
+        }, function() {
+            $(this).fadeTo("fast", 1);
+        });
+    });
+    
 });
 
-function createBoxes(numBoxes) {
-	var i = 0; 
-	if(numBoxes >= 200 || numBoxes <= 0){
+function createGrid(gridSize) {
+    $("#container > div").remove();
+    var i = 0; 
+	if (gridSize < 1 || gridSize > 10){
 		alert("You entered an invalid number, silly!");
 	
-	} else if (0 < numBoxes < 200) {
-		/* Set boxes height and width relative to number of them */
-		var boxHeight = 200 / numBoxes;
-		var boxWidth = 200 / numBoxes;
-		$('.box').height(boxHeight);
-		$('.box').width(boxWidth);
-			
-			while(i < numBoxes){
-				$("#container").append("<div class='box'></div>");
-			console.log("Box created" + i);
-			i++;
-		};
-	
 	} else {
-	 	alert("You entered something weird, man");
-	 };
+        for (var i = 0; i < gridSize; i++) {
+            for(var j = 0; j < gridSize; j++){
+            $("#container").append("<div class='grid'></div>");
+                console.log("box");
+        }
+            $("#container").append("<div class='newRow'></div>");
+        }
+        
+        $(".grid").css("height", (400/gridSize - 2));
+        $(".grid").css("width", (400/gridSize - 2));
+        
 };
 
-function reset() {
-	var newGridSize = prompt("What size would you like the new grid? (Must be a number under 200, for example entering 64 would produce a 64x64 grid)");
-	createBoxes(newGridSize);
 };
+

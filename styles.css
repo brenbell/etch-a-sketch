@@ -1,20 +1,29 @@
 /* Set up container */
 #container {
-	height: 250px;
-	width: 250px;
-	margin: 10px auto;
+	height: 450px;
+	width: 450px;
+	margin: 100px auto;
 }
 
-.box {
-	height: 50px;
-	width: 50px;
-	float:right;
+.grid {
+	display:inline-block;
 	background-color: #666;
 	border: 1px solid red;
 	margin: 2px 2px;
+    overflow: auto;
 }
 
 button {
-	margin: 2px auto;
+	margin: 10px auto;
 	display:flex;
+}
+
+#button {
+    display:flex
+    text-align: center;
+    clear:both;
+}
+
+.newRow {
+    clear:both;
 }
